@@ -1,12 +1,11 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'utils'
+description: 'For building docker files'
 inputs:
-  your-name:
-    description: 'Who to greet'
+  docker-image:
+    description: 'docker image to grab sha'
     required: true
-    default: 'World'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node12'
+  main: 'index.js'
   args:
-    - ${{ inputs.your-name }}
+    - ${{ inputs.docker-image }}
