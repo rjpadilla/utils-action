@@ -18,6 +18,9 @@ try {
 	child_process.execSync(
 		`docker pull ${dockerImage}`
 	);
+	child_process.execSync(
+		`docker image inspect ${dockerImage}`
+	);
 } catch (error) {
 	core.setFailed(error.message);
 }
